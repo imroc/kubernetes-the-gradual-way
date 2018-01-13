@@ -1,0 +1,58 @@
+{
+    "title": "Kubernetes The Gradual Way - imroc.io",
+    "description": "Kubernetes从入门到精通|kubernetes the gradual way|imroc.io",
+    "language": "zh-hans",
+    "author": "roc",
+    "links": {
+        "sidebar": {
+            "roc": "https://imroc.io"
+        }
+    },
+    "plugins": [
+        "github",
+        "codesnippet",
+        "splitter",
+        "page-toc-button",
+        "image-captions",
+        "editlink",
+        "back-to-top-button",
+        "-lunr", "-search", "search-plus",
+        "github-buttons@2.1.0",
+        "favicon@^0.0.2",
+        "tbfed-pagefooter@^0.0.1",
+        "3-ba",
+        "theme-default"
+    ],
+    "pluginsConfig": {
+        "theme-default": {
+            "showLevel": true
+        },
+        "github": {
+            "url": "https://github.com/imroc/kubernetes-the-gradual-way"
+        },
+        "editlink": {
+            "base": "https://github.com/imroc/kubernetes-the-gradual-way/blob/master/",
+            "label": "编辑本页"
+        },
+        "image-captions": {
+            "caption": "图片 - _CAPTION_"
+        },
+        "github-buttons": {
+            "repo": "imroc/kubernetes-the-gradual-way",
+            "types": ["star"],
+            "size": "small"
+        },
+        "tbfed-pagefooter": {
+            "copyright": "Copyright © imroc.io 2018",
+            "modify_label": "Updated:",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        },
+        "favicon": {
+            "shortcut": "favicon.ico",
+            "bookmark": "favicon.ico"
+        },
+        "3-ba": {
+            "token": "05e1e8b7484a08c51cd0953664168cd7"
+        }
+    }
+}
