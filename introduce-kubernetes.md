@@ -6,9 +6,9 @@ kubernetes也是云原生的核心，整个生态飞速发展，日益壮大。�
 
 # Kubernetes架构
 
-为了更容易理解kubernetes架构，我先画了个简单版的架构图，屏蔽了很多细节![](/assets/k8s-arch.png)很容易看出来，kubernetes是用master来管理其它Node（工作负载的节点），当然master自身也是可以安装成Node的。  
+为了更容易理解kubernetes架构，我先画了个简单版的架构图，屏蔽了很多细节![](/assets/k8s-arch.png)很容易看出来，kubernetes是用master来管理其它Node（工作负载的节点），当然master自身也是可以安装成Node的。
 
-核心组件说明：  
+核心组件说明：
 
 * apiserver 提供了资源操作的唯一入口，并提供认证、授权、访问控制、API注册和发现等机制；
 * etcd 保存了整个集群的状态；
