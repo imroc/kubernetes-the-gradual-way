@@ -1,6 +1,8 @@
 #! /bin/bash
 
 set -eux
+
+git pull --rebase
 gitbook build .
 git checkout gh-pages
 rm -rf `ls | egrep -v _book`
