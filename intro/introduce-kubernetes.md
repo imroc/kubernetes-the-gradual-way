@@ -19,5 +19,15 @@ kubernetes也是云原生的核心，整个生态飞速发展，日益壮大。�
 * kubelet 负责维护容器的生命周期，同时也负责Volume（CVI）和网络（CNI）的管理；
 * kube-proxy 负责为Service提供cluster内部的服务发现和负载均衡；
 
+# 如何操作集群
+
+操作集群方式有多种，它们的原理都是调用 `API Server` 的接口。
+
+1. 通过 `kubectl` 命令行工具
+2. 给集群装 `dashboard` 插件，通过网页可视化操作
+3. 用 \[Rancher\]\(http://rancher.com/\) 来管理 kubernetes，功能更加丰富
+4. 利用 SDK 写程序来做一些集群操作自动化
+
+不管怎样，最终都要和 `API Server` 通信，都需要经过访问控制校验，kubernetes 主要利用 RBAC \(基于角色的访问控制）来做的，接下来会将。
 
 
