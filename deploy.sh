@@ -2,14 +2,22 @@
 
 set -eux
 
-git pull --rebase
+git add .
+msg="rebuilding site `date`"
+if [ $# -eq 1  ]
+    then msg="$1"
+fi
+git commit -m "$msg"
+
 gitbook build .
+
 git checkout gh-pages
 rm -rf `ls | egrep -v _book`
 mv _book/* ./
 rm -rf _book
-msg="rebuilding site `date`"
+
 git add .
 git commit -m "$msg"
 git push
+
 git checkout master
