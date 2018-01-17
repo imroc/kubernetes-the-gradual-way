@@ -28,6 +28,6 @@ kubernetes也是云原生的核心，整个生态飞速发展，日益壮大。�
 3. 用 [Rancher](http://rancher.com/) 来管理 kubernetes，功能更加丰富
 4. 利用 SDK 写程序来做一些集群操作自动化
 
-不管怎样，最终都要和 `API Server` 通信，都需要经过访问控制校验，kubernetes 主要利用 RBAC \(基于角色的访问控制）来做的，接下来会将。
+不管怎样，最终都要和 `API Server` 通信，都需要经过访问控制校验，kubernetes 主要利用 RBAC (基于角色的访问控制）来做的，接下来会将。
 
 
