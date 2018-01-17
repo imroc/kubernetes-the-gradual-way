@@ -7,6 +7,7 @@
 ## 快速理解kubernetes
 
 * [kubernetes简介](/intro/introduce-kubernetes.md)
+* [kubernetes权限控制](/intro/kubernetes-authentication.md)
 
 ## 安装
 
