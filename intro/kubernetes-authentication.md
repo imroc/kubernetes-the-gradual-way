@@ -44,7 +44,7 @@ rules:
   verbs: ["get", "watch", "list"]
 ```
 - `ClusterRole` : 代表整个集群范围内的一组权限。
-> ClusterRole 定义示例：
+> ClusterRole 定义示例：  
 
 ``` yaml
 kind: ClusterRole
