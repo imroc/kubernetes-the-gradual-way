@@ -10,7 +10,8 @@ Kubernetes 的权限控制主要使用基于角色的访问控制（Role-Based A
 ## 用户与用户组
 Kubernetes 集群中包含两类用户：
 - `User` : 限制集群管理员的权限。比如刚开始学习我们可以都用最高管理员权限，可以在集群中任何 namespace 下进行访问和各种操作。到了生产环境，如果集群比较大，操作的人比较多，管理员权限的分配可能就需要更加细化了。
-- `Service Account` : 服务账号，限制集群中运行的程序的权限。比如 Kubernetes 自身的组件或一些插件，往往它们都需要对整个集群的一些状态和数据进行读写操作，就需要相应的权限；而一些普通的程序可能不需要很高的权限，我们最好就不需要给那么高的权限，以免发生意外。
+- `Service Account` : 服务账号，限制集群中运行的程序的权限。比如 Kubernetes 自身的组件或一些插件，往往它们都需要对整个集群的一些状态和数据进行读写操作，就需要相应的权限；而一些普通的程序可能不需要很高的权限，我们最好就不需要给那么高的权限，以免发生意外。  
+  
 > 我们一般要创建的是 Service Account， 定义示例：
 
 ``` yaml
@@ -29,7 +30,8 @@ metadata:
 
 ## 角色
 角色用来代表一组权限，在 Kubernetes 中有两类角色：
-- `Role` : 代表某个 namaspace 下的一组权限。
+- `Role` : 代表某个 namaspace 下的一组权限。  
+
 > 一个Role对象只能用于授予对某一单一命名空间中资源的访问权限。 以下示例描述了”default”命名空间中的一个Role对象的定义，用于授予对pod的读访问权限：  
   
 ``` yaml
@@ -44,8 +46,9 @@ rules:
   verbs: ["get", "watch", "list"]
 ```
 - `ClusterRole` : 代表整个集群范围内的一组权限。
-> ClusterRole 定义示例：  
 
+> ClusterRole 定义示例：  
+  
 ``` yaml
 kind: ClusterRole
 apiVersion: rbac.authorization.k8s.io/v1
@@ -61,7 +64,8 @@ rules:
 ## 角色绑定
 可以给某个用户或某个用户组分配一组权限，通过角色绑定来实现。分两类：
 - `RoleBinding` : 绑定的权限只作用于某个 namespace 下。
-> 定义示例：
+
+> 定义示例： 
 
 ``` yaml
 # 以下角色绑定定义将允许用户"jane"从"default"命名空间中读取pod。
@@ -80,7 +84,8 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 - `ClusterRoleBinding` : 绑定的权限作用于整个集群。
-> 定义示例：
+
+> 定义示例：  
 
 ``` yaml
 # 以下`ClusterRoleBinding`对象允许在用户组"manager"中的任何用户都可以读取集群中任何命名空间中的secret。
@@ -115,7 +120,6 @@ roleRef:
   name: secret-reader
   apiGroup: rbac.authorization.k8s.io
 ```
-
 
 ## TLS
 Kubernetes 的权限校验是通过校验证书来实现的，提取证书中的 CN(Common Name) 字段作为用户名，O(Organization) 字段作为用户组。  
