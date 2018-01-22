@@ -31,7 +31,7 @@ metadata:
 角色用来代表一组权限，在 Kubernetes 中有两类角色：
 - `Role` : 代表某个 namaspace 下的一组权限。
 > 一个Role对象只能用于授予对某一单一命名空间中资源的访问权限。 以下示例描述了”default”命名空间中的一个Role对象的定义，用于授予对pod的读访问权限：  
-
+  
 ``` yaml
 kind: Role
 apiVersion: rbac.authorization.k8s.io/v1
