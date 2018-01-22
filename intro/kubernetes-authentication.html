@@ -288,18 +288,18 @@
 <li><code>User</code> : &#x9650;&#x5236;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x5458;&#x7684;&#x6743;&#x9650;&#x3002;&#x6BD4;&#x5982;&#x521A;&#x5F00;&#x59CB;&#x5B66;&#x4E60;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x90FD;&#x7528;&#x6700;&#x9AD8;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x96C6;&#x7FA4;&#x4E2D;&#x4EFB;&#x4F55; namespace &#x4E0B;&#x8FDB;&#x884C;&#x8BBF;&#x95EE;&#x548C;&#x5404;&#x79CD;&#x64CD;&#x4F5C;&#x3002;&#x5230;&#x4E86;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#xFF0C;&#x5982;&#x679C;&#x96C6;&#x7FA4;&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x64CD;&#x4F5C;&#x7684;&#x4EBA;&#x6BD4;&#x8F83;&#x591A;&#xFF0C;&#x7BA1;&#x7406;&#x5458;&#x6743;&#x9650;&#x7684;&#x5206;&#x914D;&#x53EF;&#x80FD;&#x5C31;&#x9700;&#x8981;&#x66F4;&#x52A0;&#x7EC6;&#x5316;&#x4E86;&#x3002;</li>
 <li><code>Service Account</code> : &#x670D;&#x52A1;&#x8D26;&#x53F7;&#xFF0C;&#x9650;&#x5236;&#x96C6;&#x7FA4;&#x4E2D;&#x8FD0;&#x884C;&#x7684;&#x7A0B;&#x5E8F;&#x7684;&#x6743;&#x9650;&#x3002;&#x6BD4;&#x5982; Kubernetes &#x81EA;&#x8EAB;&#x7684;&#x7EC4;&#x4EF6;&#x6216;&#x4E00;&#x4E9B;&#x63D2;&#x4EF6;&#xFF0C;&#x5F80;&#x5F80;&#x5B83;&#x4EEC;&#x90FD;&#x9700;&#x8981;&#x5BF9;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x7684;&#x4E00;&#x4E9B;&#x72B6;&#x6001;&#x548C;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x8BFB;&#x5199;&#x64CD;&#x4F5C;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x76F8;&#x5E94;&#x7684;&#x6743;&#x9650;&#xFF1B;&#x800C;&#x4E00;&#x4E9B;&#x666E;&#x901A;&#x7684;&#x7A0B;&#x5E8F;&#x53EF;&#x80FD;&#x4E0D;&#x9700;&#x8981;&#x5F88;&#x9AD8;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x6211;&#x4EEC;&#x6700;&#x597D;&#x5C31;&#x4E0D;&#x9700;&#x8981;&#x7ED9;&#x90A3;&#x4E48;&#x9AD8;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x4EE5;&#x514D;&#x53D1;&#x751F;&#x610F;&#x5916;&#x3002;<blockquote>
 <p>&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x662F; Service Account&#xFF0C; &#x5B9A;&#x4E49;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> v1
-<span class="hljs-attr">kind:</span> ServiceAccount
-<span class="hljs-attr">metadata:</span>
-<span class="hljs-attr">name:</span> admin
-<span class="hljs-attr">namespace:</span> kube-system
-<span class="hljs-attr">labels:</span>
-  kubernetes.io/cluster-service: <span class="hljs-string">&quot;true&quot;</span>
-  addonmanager.kubernetes.io/mode: Reconcile
-</code></pre>
 </blockquote>
 </li>
 </ul>
+<pre><code class="lang-yaml"><span class="hljs-attr">apiVersion:</span> v1
+<span class="hljs-attr">kind:</span> ServiceAccount
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> admin
+<span class="hljs-attr">  namespace:</span> kube-system
+<span class="hljs-attr">  labels:</span>
+    kubernetes.io/cluster-service: <span class="hljs-string">&quot;true&quot;</span>
+    addonmanager.kubernetes.io/mode: Reconcile
+</code></pre>
 <p>&#x7528;&#x6237;&#x7EC4;&#xFF1A;</p>
 <ul>
 <li><code>Group</code> : &#x7528;&#x4E8E;&#x7ED9;&#x4E00;&#x7EC4;&#x7528;&#x6237;&#x8D4B;&#x4E88;&#x76F8;&#x540C;&#x7684;&#x6743;&#x9650;&#x3002;</li>
@@ -308,97 +308,99 @@
 <p>&#x89D2;&#x8272;&#x7528;&#x6765;&#x4EE3;&#x8868;&#x4E00;&#x7EC4;&#x6743;&#x9650;&#xFF0C;&#x5728; Kubernetes &#x4E2D;&#x6709;&#x4E24;&#x7C7B;&#x89D2;&#x8272;&#xFF1A;</p>
 <ul>
 <li><code>Role</code> : &#x4EE3;&#x8868;&#x67D0;&#x4E2A; namaspace &#x4E0B;&#x7684;&#x4E00;&#x7EC4;&#x6743;&#x9650;&#x3002;<blockquote>
-<p>&#x4E00;&#x4E2A;Role&#x5BF9;&#x8C61;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x6388;&#x4E88;&#x5BF9;&#x67D0;&#x4E00;&#x5355;&#x4E00;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x8D44;&#x6E90;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002; &#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x63CF;&#x8FF0;&#x4E86;&#x201D;default&#x201D;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;Role&#x5BF9;&#x8C61;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x7528;&#x4E8E;&#x6388;&#x4E88;&#x5BF9;pod&#x7684;&#x8BFB;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF1A;
-``` yaml
-kind: Role
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-namespace: default
-name: pod-reader
-rules:</p>
+<p>&#x4E00;&#x4E2A;Role&#x5BF9;&#x8C61;&#x53EA;&#x80FD;&#x7528;&#x4E8E;&#x6388;&#x4E88;&#x5BF9;&#x67D0;&#x4E00;&#x5355;&#x4E00;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x8D44;&#x6E90;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002; &#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x63CF;&#x8FF0;&#x4E86;&#x201D;default&#x201D;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;Role&#x5BF9;&#x8C61;&#x7684;&#x5B9A;&#x4E49;&#xFF0C;&#x7528;&#x4E8E;&#x6388;&#x4E88;&#x5BF9;pod&#x7684;&#x8BFB;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF1A;  </p>
 </blockquote>
 </li>
-<li>apiGroups: [&quot;&quot;] # &#x7A7A;&#x5B57;&#x7B26;&#x4E32;&quot;&quot;&#x8868;&#x660E;&#x4F7F;&#x7528;core API group
-resources: [&quot;pods&quot;]
-verbs: [&quot;get&quot;, &quot;watch&quot;, &quot;list&quot;]
-```</li>
-<li><code>ClusterRole</code> : &#x4EE3;&#x8868;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x8303;&#x56F4;&#x5185;&#x7684;&#x4E00;&#x7EC4;&#x6743;&#x9650;&#x3002;<blockquote>
-<p>ClusterRole &#x5B9A;&#x4E49;&#x793A;&#x4F8B;&#xFF1A;
-``` yaml
-kind: ClusterRole
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:</p>
-<h1 id="&#x9274;&#x4E8E;clusterrole&#x662F;&#x96C6;&#x7FA4;&#x8303;&#x56F4;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x4E0D;&#x9700;&#x8981;&#x5B9A;&#x4E49;namespace&#x5B57;&#x6BB5;">&#x9274;&#x4E8E;ClusterRole&#x662F;&#x96C6;&#x7FA4;&#x8303;&#x56F4;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x4E0D;&#x9700;&#x8981;&#x5B9A;&#x4E49;&quot;namespace&quot;&#x5B57;&#x6BB5;</h1>
-<p>name: secret-reader
-rules:</p>
-</blockquote>
-</li>
-<li>apiGroups: [&quot;&quot;]
-resources: [&quot;secrets&quot;]
-verbs: [&quot;get&quot;, &quot;watch&quot;, &quot;list&quot;]
-```</li>
 </ul>
+<pre><code class="lang-yaml"><span class="hljs-attr">kind:</span> Role
+<span class="hljs-attr">apiVersion:</span> rbac.authorization.k8s.io/v1
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  namespace:</span> default
+<span class="hljs-attr">  name:</span> pod-reader
+<span class="hljs-attr">rules:</span>
+<span class="hljs-attr">- apiGroups:</span> [<span class="hljs-string">&quot;&quot;</span>] <span class="hljs-comment"># &#x7A7A;&#x5B57;&#x7B26;&#x4E32;&quot;&quot;&#x8868;&#x660E;&#x4F7F;&#x7528;core API group</span>
+<span class="hljs-attr">  resources:</span> [<span class="hljs-string">&quot;pods&quot;</span>]
+<span class="hljs-attr">  verbs:</span> [<span class="hljs-string">&quot;get&quot;</span>, <span class="hljs-string">&quot;watch&quot;</span>, <span class="hljs-string">&quot;list&quot;</span>]
+</code></pre>
+<ul>
+<li><code>ClusterRole</code> : &#x4EE3;&#x8868;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x8303;&#x56F4;&#x5185;&#x7684;&#x4E00;&#x7EC4;&#x6743;&#x9650;&#x3002;<blockquote>
+<p>ClusterRole &#x5B9A;&#x4E49;&#x793A;&#x4F8B;&#xFF1A;  </p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="lang-yaml"><span class="hljs-attr">kind:</span> ClusterRole
+<span class="hljs-attr">apiVersion:</span> rbac.authorization.k8s.io/v1
+<span class="hljs-attr">metadata:</span>
+  <span class="hljs-comment"># &#x9274;&#x4E8E;ClusterRole&#x662F;&#x96C6;&#x7FA4;&#x8303;&#x56F4;&#x5BF9;&#x8C61;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x4E0D;&#x9700;&#x8981;&#x5B9A;&#x4E49;&quot;namespace&quot;&#x5B57;&#x6BB5;</span>
+<span class="hljs-attr">  name:</span> secret-reader
+<span class="hljs-attr">rules:</span>
+<span class="hljs-attr">- apiGroups:</span> [<span class="hljs-string">&quot;&quot;</span>]
+<span class="hljs-attr">  resources:</span> [<span class="hljs-string">&quot;secrets&quot;</span>]
+<span class="hljs-attr">  verbs:</span> [<span class="hljs-string">&quot;get&quot;</span>, <span class="hljs-string">&quot;watch&quot;</span>, <span class="hljs-string">&quot;list&quot;</span>]
+</code></pre>
 <h2 id="&#x89D2;&#x8272;&#x7ED1;&#x5B9A;">&#x89D2;&#x8272;&#x7ED1;&#x5B9A;</h2>
 <p>&#x53EF;&#x4EE5;&#x7ED9;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x6216;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x7EC4;&#x5206;&#x914D;&#x4E00;&#x7EC4;&#x6743;&#x9650;&#xFF0C;&#x901A;&#x8FC7;&#x89D2;&#x8272;&#x7ED1;&#x5B9A;&#x6765;&#x5B9E;&#x73B0;&#x3002;&#x5206;&#x4E24;&#x7C7B;&#xFF1A;</p>
 <ul>
 <li><code>RoleBinding</code> : &#x7ED1;&#x5B9A;&#x7684;&#x6743;&#x9650;&#x53EA;&#x4F5C;&#x7528;&#x4E8E;&#x67D0;&#x4E2A; namespace &#x4E0B;&#x3002;<blockquote>
-<p>&#x5B9A;&#x4E49;&#x793A;&#x4F8B;&#xFF1A;
-``` yaml</p>
-<h1 id="&#x4EE5;&#x4E0B;&#x89D2;&#x8272;&#x7ED1;&#x5B9A;&#x5B9A;&#x4E49;&#x5C06;&#x5141;&#x8BB8;&#x7528;&#x6237;jane&#x4ECE;default&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x8BFB;&#x53D6;pod&#x3002;">&#x4EE5;&#x4E0B;&#x89D2;&#x8272;&#x7ED1;&#x5B9A;&#x5B9A;&#x4E49;&#x5C06;&#x5141;&#x8BB8;&#x7528;&#x6237;&quot;jane&quot;&#x4ECE;&quot;default&quot;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x8BFB;&#x53D6;pod&#x3002;</h1>
-<p>kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-name: read-pods
-namespace: default
-subjects:</p>
+<p>&#x5B9A;&#x4E49;&#x793A;&#x4F8B;&#xFF1A;</p>
 </blockquote>
 </li>
-<li>kind: User
-name: jane
-apiGroup: rbac.authorization.k8s.io
-roleRef:
-kind: Role
-name: pod-reader
-apiGroup: rbac.authorization.k8s.io
-```</li>
-<li><code>ClusterRoleBinding</code> : &#x7ED1;&#x5B9A;&#x7684;&#x6743;&#x9650;&#x4F5C;&#x7528;&#x4E8E;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x3002;<blockquote>
-<p>&#x5B9A;&#x4E49;&#x793A;&#x4F8B;&#xFF1A;
-``` yaml</p>
-<h1 id="&#x4EE5;&#x4E0B;clusterrolebinding&#x5BF9;&#x8C61;&#x5141;&#x8BB8;&#x5728;&#x7528;&#x6237;&#x7EC4;manager&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x7528;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x96C6;&#x7FA4;&#x4E2D;&#x4EFB;&#x4F55;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;secret&#x3002;">&#x4EE5;&#x4E0B;<code>ClusterRoleBinding</code>&#x5BF9;&#x8C61;&#x5141;&#x8BB8;&#x5728;&#x7528;&#x6237;&#x7EC4;&quot;manager&quot;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x7528;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x96C6;&#x7FA4;&#x4E2D;&#x4EFB;&#x4F55;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;secret&#x3002;</h1>
-<p>kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
-metadata:
-name: read-secrets-global
-subjects:</p>
-</blockquote>
-</li>
-<li>kind: Group
-name: manager
-apiGroup: rbac.authorization.k8s.io
-roleRef:
-kind: ClusterRole
-name: secret-reader
-apiGroup: rbac.authorization.k8s.io
-<code>**&#x6CE8;&#xFF1A;** RoleBinding &#x4E2D;&#x7684; roleRef &#x4E5F;&#x53EF;&#x4EE5;&#x7528; ClusterRole&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5C06; ClusterRole &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6743;&#x9650;&#x9650;&#x5B9A;&#x5728;&#x67D0; namespace &#x4E0B;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x9884;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x901A;&#x7528;&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x5728;&#x591A;&#x4E2A; namespace &#x4E0B;&#x590D;&#x7528;&#x3002;&#x5B9A;&#x4E49;&#x793A;&#x4F8B;&#xFF1A;</code> yaml<h1 id="&#x4EE5;&#x4E0B;&#x89D2;&#x8272;&#x7ED1;&#x5B9A;&#x5141;&#x8BB8;&#x7528;&#x6237;dave&#x8BFB;&#x53D6;development&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;secret&#x3002;">&#x4EE5;&#x4E0B;&#x89D2;&#x8272;&#x7ED1;&#x5B9A;&#x5141;&#x8BB8;&#x7528;&#x6237;&quot;dave&quot;&#x8BFB;&#x53D6;&quot;development&quot;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;secret&#x3002;</h1>
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
-metadata:
-name: read-secrets
-namespace: development # &#x8FD9;&#x91CC;&#x8868;&#x660E;&#x4EC5;&#x6388;&#x6743;&#x8BFB;&#x53D6;&quot;development&quot;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x8D44;&#x6E90;&#x3002;
-subjects:</li>
-<li>kind: User
-name: dave
-apiGroup: rbac.authorization.k8s.io
-roleRef:
-kind: ClusterRole
-name: secret-reader
-apiGroup: rbac.authorization.k8s.io
-```</li>
 </ul>
+<pre><code class="lang-yaml"><span class="hljs-comment"># &#x4EE5;&#x4E0B;&#x89D2;&#x8272;&#x7ED1;&#x5B9A;&#x5B9A;&#x4E49;&#x5C06;&#x5141;&#x8BB8;&#x7528;&#x6237;&quot;jane&quot;&#x4ECE;&quot;default&quot;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x8BFB;&#x53D6;pod&#x3002;</span>
+<span class="hljs-attr">kind:</span> RoleBinding
+<span class="hljs-attr">apiVersion:</span> rbac.authorization.k8s.io/v1
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> read-pods
+<span class="hljs-attr">  namespace:</span> default
+<span class="hljs-attr">subjects:</span>
+<span class="hljs-attr">- kind:</span> User
+<span class="hljs-attr">  name:</span> jane
+<span class="hljs-attr">  apiGroup:</span> rbac.authorization.k8s.io
+<span class="hljs-attr">roleRef:</span>
+<span class="hljs-attr">  kind:</span> Role
+<span class="hljs-attr">  name:</span> pod-reader
+<span class="hljs-attr">  apiGroup:</span> rbac.authorization.k8s.io
+</code></pre>
+<ul>
+<li><code>ClusterRoleBinding</code> : &#x7ED1;&#x5B9A;&#x7684;&#x6743;&#x9650;&#x4F5C;&#x7528;&#x4E8E;&#x6574;&#x4E2A;&#x96C6;&#x7FA4;&#x3002;<blockquote>
+<p>&#x5B9A;&#x4E49;&#x793A;&#x4F8B;&#xFF1A;</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="lang-yaml"><span class="hljs-comment"># &#x4EE5;&#x4E0B;`ClusterRoleBinding`&#x5BF9;&#x8C61;&#x5141;&#x8BB8;&#x5728;&#x7528;&#x6237;&#x7EC4;&quot;manager&quot;&#x4E2D;&#x7684;&#x4EFB;&#x4F55;&#x7528;&#x6237;&#x90FD;&#x53EF;&#x4EE5;&#x8BFB;&#x53D6;&#x96C6;&#x7FA4;&#x4E2D;&#x4EFB;&#x4F55;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;secret&#x3002;</span>
+<span class="hljs-attr">kind:</span> ClusterRoleBinding
+<span class="hljs-attr">apiVersion:</span> rbac.authorization.k8s.io/v1beta1
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> read-secrets-global
+<span class="hljs-attr">subjects:</span>
+<span class="hljs-attr">- kind:</span> Group
+<span class="hljs-attr">  name:</span> manager
+<span class="hljs-attr">  apiGroup:</span> rbac.authorization.k8s.io
+<span class="hljs-attr">roleRef:</span>
+<span class="hljs-attr">  kind:</span> ClusterRole
+<span class="hljs-attr">  name:</span> secret-reader
+<span class="hljs-attr">  apiGroup:</span> rbac.authorization.k8s.io
+</code></pre>
+<p><strong>&#x6CE8;&#xFF1A;</strong> RoleBinding &#x4E2D;&#x7684; roleRef &#x4E5F;&#x53EF;&#x4EE5;&#x7528; ClusterRole&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5C06; ClusterRole &#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x6743;&#x9650;&#x9650;&#x5B9A;&#x5728;&#x67D0; namespace &#x4E0B;&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x9884;&#x5148;&#x5B9A;&#x4E49;&#x4E00;&#x4E9B;&#x901A;&#x7528;&#x7684;&#x89D2;&#x8272;&#xFF0C;&#x5728;&#x591A;&#x4E2A; namespace &#x4E0B;&#x590D;&#x7528;&#x3002;&#x5B9A;&#x4E49;&#x793A;&#x4F8B;&#xFF1A;</p>
+<pre><code class="lang-yaml"><span class="hljs-comment"># &#x4EE5;&#x4E0B;&#x89D2;&#x8272;&#x7ED1;&#x5B9A;&#x5141;&#x8BB8;&#x7528;&#x6237;&quot;dave&quot;&#x8BFB;&#x53D6;&quot;development&quot;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;secret&#x3002;</span>
+<span class="hljs-attr">kind:</span> RoleBinding
+<span class="hljs-attr">apiVersion:</span> rbac.authorization.k8s.io/v1beta1
+<span class="hljs-attr">metadata:</span>
+<span class="hljs-attr">  name:</span> read-secrets
+<span class="hljs-attr">  namespace:</span> development <span class="hljs-comment"># &#x8FD9;&#x91CC;&#x8868;&#x660E;&#x4EC5;&#x6388;&#x6743;&#x8BFB;&#x53D6;&quot;development&quot;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x8D44;&#x6E90;&#x3002;</span>
+<span class="hljs-attr">subjects:</span>
+<span class="hljs-attr">- kind:</span> User
+<span class="hljs-attr">  name:</span> dave
+<span class="hljs-attr">  apiGroup:</span> rbac.authorization.k8s.io
+<span class="hljs-attr">roleRef:</span>
+<span class="hljs-attr">  kind:</span> ClusterRole
+<span class="hljs-attr">  name:</span> secret-reader
+<span class="hljs-attr">  apiGroup:</span> rbac.authorization.k8s.io
+</code></pre>
 <h2 id="tls">TLS</h2>
 <p>Kubernetes &#x7684;&#x6743;&#x9650;&#x6821;&#x9A8C;&#x662F;&#x901A;&#x8FC7;&#x6821;&#x9A8C;&#x8BC1;&#x4E66;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x63D0;&#x53D6;&#x8BC1;&#x4E66;&#x4E2D;&#x7684; CN(Common Name) &#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;&#x7528;&#x6237;&#x540D;&#xFF0C;O(Organization) &#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;&#x7528;&#x6237;&#x7EC4;&#x3002;   </p>
 <footer class="page-footer"><span class="copyright">Copyright &#xA9; imroc.io 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">Updated:
-2018-01-22 13:41:15
+2018-01-22 14:09:28
 </span></footer>
                                 
                                 </section>
@@ -442,7 +444,7 @@ apiGroup: rbac.authorization.k8s.io
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"kubernetes权限控制","level":"2.2","depth":1,"next":{"title":"概述","level":"3.1","depth":1,"path":"install-kubernetes/install-kubernetes.md","ref":"install-kubernetes/install-kubernetes.md","articles":[]},"previous":{"title":"kubernetes简介","level":"2.1","depth":1,"path":"intro/introduce-kubernetes.md","ref":"intro/introduce-kubernetes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","codesnippet","splitter","page-toc-button","image-captions","editlink","back-to-top-button","-lunr","-search","search-plus","github-buttons@2.1.0","favicon@^0.0.2","tbfed-pagefooter@^0.0.1","3-ba","theme-default"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © imroc.io 2018","modify_label":"Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/imroc/kubernetes-the-gradual-way"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/imroc/kubernetes-the-gradual-way/blob/master/"},"splitter":{},"codesnippet":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"page-toc-button":{},"back-to-top-button":{},"github-buttons":{"repo":"imroc/kubernetes-the-gradual-way","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"05e1e8b7484a08c51cd0953664168cd7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{},"image-captions":{"caption":"图片 - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"roc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[]},"title":"Kubernetes The Gradual Way - imroc.io","language":"zh-hans","links":{"sidebar":{"roc":"https://imroc.io"}},"gitbook":"*","description":"Kubernetes从入门到精通|kubernetes the gradual way|imroc.io"},"file":{"path":"intro/kubernetes-authentication.md","mtime":"2018-01-22T05:41:15.014Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-22T05:41:34.392Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"kubernetes权限控制","level":"2.2","depth":1,"next":{"title":"概述","level":"3.1","depth":1,"path":"install-kubernetes/install-kubernetes.md","ref":"install-kubernetes/install-kubernetes.md","articles":[]},"previous":{"title":"kubernetes简介","level":"2.1","depth":1,"path":"intro/introduce-kubernetes.md","ref":"intro/introduce-kubernetes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","codesnippet","splitter","page-toc-button","image-captions","editlink","back-to-top-button","-lunr","-search","search-plus","github-buttons@2.1.0","favicon@^0.0.2","tbfed-pagefooter@^0.0.1","3-ba","theme-default"],"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © imroc.io 2018","modify_label":"Updated:","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/imroc/kubernetes-the-gradual-way"},"editlink":{"label":"编辑本页","multilingual":false,"base":"https://github.com/imroc/kubernetes-the-gradual-way/blob/master/"},"splitter":{},"codesnippet":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"page-toc-button":{},"back-to-top-button":{},"github-buttons":{"repo":"imroc/kubernetes-the-gradual-way","types":["star"],"size":"small"},"3-ba":{"configuration":"auto","token":"05e1e8b7484a08c51cd0953664168cd7"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"showLevel":true,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"search-plus":{},"image-captions":{"caption":"图片 - _CAPTION_","variable_name":"_pictures"}},"theme":"default","author":"roc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"_pictures":[]},"title":"Kubernetes The Gradual Way - imroc.io","language":"zh-hans","links":{"sidebar":{"roc":"https://imroc.io"}},"gitbook":"*","description":"Kubernetes从入门到精通|kubernetes the gradual way|imroc.io"},"file":{"path":"intro/kubernetes-authentication.md","mtime":"2018-01-22T06:09:28.422Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-01-22T06:09:38.500Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
