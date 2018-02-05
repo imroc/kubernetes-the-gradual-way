@@ -107,7 +107,7 @@ roleRef:
 ``` yaml
 # 以下角色绑定允许用户"dave"读取"development"命名空间中的secret。
 kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
   name: read-secrets
   namespace: development # 这里表明仅授权读取"development"命名空间中的资源。

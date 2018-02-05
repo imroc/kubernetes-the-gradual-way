@@ -12,7 +12,8 @@
 ### 安装
 
 - [概述](/install-kubernetes/install-kubernetes.md)
-- [在CentOS 7上部署Kubernetes v1.9](/install-kubernetes/install-kubernetes-1.9-on-centos7.md)
+- [在CentOS 7上部署Kubernetes v1.9](/install-kubernetes/install-kubernetes-1.9-on-centos7/install-kubernetes-1.9-on-centos7.md)
+  - [创建证书和密钥](/install-kubernetes/install-kubernetes-1.9-on-centos7/create-key-and-crt.md)
 
 
 
