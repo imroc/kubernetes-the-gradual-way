@@ -1,6 +1,6 @@
 #! /bin/bash
 
-set -eux
+set -ex
 
 git add .
 msg="rebuilding site `date`"
