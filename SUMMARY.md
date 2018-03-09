@@ -16,5 +16,6 @@
 - [在CentOS 7上部署Kubernetes v1.9](/install-kubernetes/install-kubernetes-1.9-on-centos7/install-kubernetes-1.9-on-centos7.md)
   - [创建证书和密钥](/install-kubernetes/install-kubernetes-1.9-on-centos7/create-key-and-crt.md)
 
-
+### 附录
+- [利用Katacoda免费同步Docker镜像到Docker Hub](/appendix/sync-images-to-docker-hub-using-katacoda.md)
 
