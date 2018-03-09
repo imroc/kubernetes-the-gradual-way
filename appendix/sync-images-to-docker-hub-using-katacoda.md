@@ -1,3 +1,6 @@
+# 利用Katacoda免费同步Docker镜像到Docker Hub
+> 无需买服务器，脚本批量同步
+
 ## 为什么要同步
 安装kubernetes的时候，我们需要用到 gcr.io/google_containers 下面的一些镜像，在国内是不能直接下载的。如果用 Self Host 方式安装，master 上的组件除开kubelet之外都用容器运行，甚至 CNI 插件也是容器运行，比如 flannel，在 quay.io/coreos 下面，在国内下载非常慢。但是我们可以把这些镜像同步到我们的docker hub仓库里，再配个docker hub加速器，这样下载镜像就很快了。
 
